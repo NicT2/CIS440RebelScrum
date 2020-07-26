@@ -27,10 +27,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-  function emojiToggle(){
-    console.log("activated");
-    document.getElementById("dropMenu").classList.toggle("show");
-  }
+
+$(document).ready(function(){
+  $(".dropdown-toggle").dropdown();
+});
+
 </script>
 
 <script type="text/javascript">
@@ -63,7 +64,7 @@
   <section id="title">
 
     <!-- survey button activates dropdown menu-->
-  <button class = "btn btn-light dropdown-toggle" onclick="emojiToggle()" style="margin: 10px; margin-left:0;" data-toggle="dropdown" data-target="#surveyStart" aria-haspopup="true" aria-expanded="false"><img src="./images/smile.png" ></button>
+  <button type="button" class = "btn btn-light dropdown-toggle" style="margin: 10px; margin-left:0;" onclick="emojiToggle()"><img src="./images/smile.png" ></button>
   
   <!-- Dropdown menu -->
   <div class="dropdown-menu" id="dropMenu" style="max-width: 300px;">
