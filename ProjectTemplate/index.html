@@ -27,6 +27,12 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
+  function emojiToggle(){
+    document.getElementById("dropMenu").classList.toggle("show");
+  }
+</script>
+
+<script type="text/javascript">
     function TestButtonHandler() {
       var webMethod = "ProjectServices.asmx/TestConnection";
       var parameters = "{}";
@@ -56,14 +62,14 @@
   <section id="title">
 
     <!-- survey button activates dropdown menu-->
-  <button class = "btn btn-light dropdown-toggle" style="margin: 10px; margin-left:0;" data-toggle="dropdown" data-target="#surveyStart" aria-haspopup="true" aria-expanded="false"><img src="./images/smile.png" ></button>
+  <button class = "btn btn-light dropdown-toggle" onclick="emojiToggle()" style="margin: 10px; margin-left:0;" data-toggle="dropdown" data-target="#surveyStart" aria-haspopup="true" aria-expanded="false"><img src="./images/smile.png" ></button>
   
   <!-- Dropdown menu -->
-  <div class="dropdown-menu" id="dropMenu">
+  <div class="dropdown-menu" id="dropMenu" style="max-width: 300px;">
     <form class="px-4 py-3">
       <label style="text-align: center;"><strong>Give us your feedback!</strong></label>
       <div class="form-group"> 
-        <button class="btn btn-light" style="margin: 10px; margin-left:0;"><img src="./images/heart_eyes.png">&nbsp;&nbsp;&nbsp;Love</button>
+        <button class="btn btn-light" onclick="happyForm('dropMenu')" style="margin: 10px; margin-left:0;"><img src="./images/heart_eyes.png">&nbsp;&nbsp;&nbsp;Love</button>
       </div>
       <div class="form-group">  <!-- Placeholders set so you can replace them with buttons that have image in the :))) -->
         <button class="btn btn-light" style="margin: 10px; margin-left:0;"><img src="./images/vomit.png">&nbsp;&nbsp;&nbsp;HATE</button>
