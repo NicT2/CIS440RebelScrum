@@ -8,7 +8,80 @@ function resetForm(id){
 
 function happyForm(id){
 	clearScreen(id);
-	//header
+
+	// header
+	var header = document.createElement('h5')
+	header.innerHTML = "Give us your feedback!"
+	header.setAttribute('style', 'font-weight: bold; text-align: center;')
+
+	// message
+	var happyText = document.createElement('p')
+	happyText.innerHTML = "We're glad you're enjoying the site!"
+	happyText.setAttribute('id', 'happyText')
+	happyText.setAttribute('style', 'font-size: 15px; font-weight: bold; padding: 5px; text-align: center;')
+
+	// text box label
+	var textLabel = document.createElement('label')
+	textLabel.innerHTML = "What did you love most about your experience?"
+	textLabel.setAttribute('id', 'happyTextLabel')
+	textLabel.setAttribute('style', 'margin-left: 10px;')
+
+	// text box
+	var happyBox = document.createElement('input')
+	happyBox.setAttribute('type', 'text')
+	happyBox.setAttribute('id', 'happyTextBox')
+	happyBox.setAttribute('style', 'width: 275px; height: 100px; margin-left:10px;')
+
+	// anon label
+	var anonLabel = document.createElement('label')
+	anonLabel.innerHTML = "Click the checkbox to remain anonymous"
+	anonLabel.setAttribute('id', 'happyAnonLabel')
+	anonLabel.setAttribute('style', 'font-size: .8rem; margin-top: 10px; margin-bottom: -20px; margin-left: 10px')
+
+	// email
+	var emailBox = document.createElement('input')
+	emailBox.setAttribute('type', 'text')
+	emailBox.setAttribute('id', 'happyEmailBox')
+	emailBox.setAttribute('style', 'width: 250px; margin-left: 10px; margin-right: 10px')
+	emailBox.placeholder = 'Enter your email address'
+
+	// check box
+	var checkBox = document.createElement('input')
+	checkBox.setAttribute('type', 'checkbox')
+
+	checkBox.addEventListener('change', function(e) {
+
+		if (checkBox.checked) {
+			emailBox.disabled = true
+			emailBox.placeholder = 'Anonymous'
+		} else {
+			emailBox.disabled = false
+			emailBox.placeholder = 'Enter your email address'
+		}
+	})
+
+	// submit button
+	var submit 				= document.createElement('input')
+	submit.type				= 'button'
+	submit.name				= 'madSubmit'
+	submit.value			= "Submit"
+	submit.className		= 'btn btn-primary'
+	submit.style.width		= '275px'
+	submit.style.marginTop 	= '10px'
+	submit.style.marginLeft = '10px'
+
+	// append everything
+	var div = document.getElementById(id)
+	// div.append(header)
+	div.append(happyText)
+	div.append(textLabel)
+	div.append(happyBox)
+	div.append(anonLabel)
+	div.append(emailBox)
+	div.append(checkBox)
+	div.append(submit)
+
+	/* //header
 	var header = document.createElement('h5');
 	header.innerHTML = "Give us your Feedback!";
 	header.setAttribute('style', 'font-weight:bold; text-align: center;')
@@ -31,9 +104,9 @@ function happyForm(id){
 	happyBox.setAttribute('id', 'happyTextBox');
 	happyBox.setAttribute('style', 'width: 275px; height: 100px; margin-left:10px;');
 
-	// var anon = document.createElement('input');
-	// anon.setAttribute('id', 'anonCheckbox');
-	// anon.setAttribute('type', 'checkbox');
+	var anon = document.createElement('input');
+	anon.setAttribute('id', 'anonCheckbox');
+	anon.setAttribute('type', 'checkbox');
 
 	var submit 				= document.createElement('input')
 	submit.type				= 'button'
@@ -48,9 +121,7 @@ function happyForm(id){
 	div.append(header);
 	div.append(happyText);
 	div.append(textLabel);
-	div.append(happyBox);
-	div.append(submit);
-
+	div.append(happyBox); */
 }
 
 function madForm(id){
@@ -79,13 +150,18 @@ function madForm(id){
 	madBox.setAttribute('id', 'madTextBox')
 	madBox.setAttribute('style', 'width: 275px; height: 100px; margin-left:10px;')
 
+	// anon label
+	var anonLabel = document.createElement('label')
+	anonLabel.innerHTML = "Click the checkbox to remain anonymous"
+	anonLabel.setAttribute('id', 'madAnonLabel')
+	anonLabel.setAttribute('style', 'font-size: .8rem; margin-top: 10px; margin-bottom: -20px; margin-left: 10px')
+
 	// email
 	var emailBox = document.createElement('input')
 	emailBox.setAttribute('type', 'text')
 	emailBox.setAttribute('id', 'madEmailBox')
-	emailBox.setAttribute('style', 'width: 250px; margin-top: 10px; margin-left: 10px; margin-right: 10px')
-	emailBox.placeholder = 'Check the box to leave your email'
-	emailBox.disabled = true
+	emailBox.setAttribute('style', 'width: 250px; margin-left: 10px; margin-right: 10px')
+	emailBox.placeholder = 'Enter your email address'
 
 	// check box
 	var checkBox = document.createElement('input')
@@ -94,9 +170,11 @@ function madForm(id){
 	checkBox.addEventListener('change', function(e) {
 
 		if (checkBox.checked) {
-			emailBox.disabled = false
-		} else {
 			emailBox.disabled = true
+			emailBox.placeholder = 'Anonymous'
+		} else {
+			emailBox.disabled = false
+			emailBox.placeholder = 'Enter your email address'
 		}
 	})
 
@@ -119,24 +197,84 @@ function madForm(id){
 	div.append(madText)
 	div.append(textLabel)
 	div.append(madBox)
+	div.append(anonLabel)
 	div.append(emailBox)
 	div.append(checkBox)
 	div.append(submit)
-
-	// var label = document.createElement('label');
-	// label.innerHTML = "Provide your Feedback!";
-
-	// var div = document.getElementById(id);
-	// div.append(label);
 }
 
 function suggestForm(id){
 	clearScreen(id);
-	var label = document.createElement('label');
-	label.innerHTML = "Provide your Feedback!";
 
-	var div = document.getElementById(id);
-	div.append(label);
+	// header
+	// var header = document.createElement('h5')
+	// header.innerHTML = "Give us your feedback!"
+	// header.setAttribute('style', 'font-weight: bold; text-align: center;')
 
+	// message
+	var suggestText = document.createElement('p')
+	suggestText.innerHTML = "Have a suggestion? Leave it below!"
+	suggestText.setAttribute('id', 'suggestText')
+	suggestText.setAttribute('style', 'font-size: 15px; font-weight: bold; padding: 5px; text-align: center;')
+
+	// text box label
+	var textLabel = document.createElement('label')
+	textLabel.innerHTML = "What did you hate most about your experience?"
+	textLabel.setAttribute('id', 'suggestTextLabel')
+	textLabel.setAttribute('style', 'margin-left: 10px;')
+
+	// text box
+	var suggestBox = document.createElement('input')
+	suggestBox.setAttribute('type', 'text')
+	suggestBox.setAttribute('id', 'suggestTextBox')
+	suggestBox.setAttribute('style', 'width: 275px; height: 100px; margin-left:10px;')
+
+	// anon label
+	var anonLabel = document.createElement('label')
+	anonLabel.innerHTML = "Click the checkbox to remain anonymous"
+	anonLabel.setAttribute('id', 'suggestAnonLabel')
+	anonLabel.setAttribute('style', 'font-size: .8rem; margin-top: 10px; margin-bottom: -20px; margin-left: 10px')
+
+	// email
+	var emailBox = document.createElement('input')
+	emailBox.setAttribute('type', 'text')
+	emailBox.setAttribute('id', 'suggestEmailBox')
+	emailBox.setAttribute('style', 'width: 250px; margin-left: 10px; margin-right: 10px')
+	emailBox.placeholder = 'Enter your email address'
+
+	// check box
+	var checkBox = document.createElement('input')
+	checkBox.setAttribute('type', 'checkbox')
+
+	checkBox.addEventListener('change', function(e) {
+
+		if (checkBox.checked) {
+			emailBox.disabled = true
+			emailBox.placeholder = 'Anonymous'
+		} else {
+			emailBox.disabled = false
+			emailBox.placeholder = 'Enter your email address'
+		}
+	})
+
+	// submit button
+	var submit 				= document.createElement('input')
+	submit.type				= 'button'
+	submit.name				= 'suggestSubmit'
+	submit.value			= "Submit"
+	submit.className		= 'btn btn-primary'
+	submit.style.width		= '275px'
+	submit.style.marginTop 	= '10px'
+	submit.style.marginLeft = '10px'
+
+	// append everything
+	var div = document.getElementById(id)
+	// div.append(header)
+	div.append(suggestText)
+	// div.append(textLabel)
+	div.append(suggestBox)
+	div.append(anonLabel)
+	div.append(emailBox)
+	div.append(checkBox)
+	div.append(submit)
 }
-
