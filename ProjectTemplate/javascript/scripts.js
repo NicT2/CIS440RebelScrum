@@ -90,9 +90,6 @@ function madForm(id){
 		}
 	})
 
-
-	
-
 	// submit button
 	var submit 				= document.createElement('input')
 	submit.type				= 'button'
@@ -103,7 +100,7 @@ function madForm(id){
 	submit.style.marginTop 	= '10px'
 	submit.style.marginLeft = '10px'
 
-
+	// append everything
 	var div = document.getElementById(id)
 	// div.append(header)
 	div.append(madText)
@@ -113,13 +110,11 @@ function madForm(id){
 	div.append(checkBox)
 	div.append(submit)
 
-
 	// var label = document.createElement('label');
 	// label.innerHTML = "Provide your Feedback!";
 
 	// var div = document.getElementById(id);
 	// div.append(label);
-
 }
 
 function suggestForm(id){
