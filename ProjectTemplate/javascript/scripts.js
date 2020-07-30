@@ -109,6 +109,9 @@ function madForm(id){
 	submit.style.width		= '275px'
 	submit.style.marginTop 	= '10px'
 	submit.style.marginLeft = '10px'
+	submit.id 				= 'submitButton'
+	submit.onclick			= thing
+	//submit.onclick = function() { alert("it worked");}
 
 	// append everything
 	var div = document.getElementById(id)
