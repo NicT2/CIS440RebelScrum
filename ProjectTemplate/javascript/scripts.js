@@ -53,8 +53,8 @@ function happyForm(id){
 	textLabel.setAttribute('style', 'margin-left: 10px;')
 
 	// text box
-	var happyBox = document.createElement('input')
-	happyBox.setAttribute('type', 'text')
+	var happyBox = document.createElement('textarea')
+	happyBox.setAttribute('maxLength', '1000')
 	happyBox.setAttribute('id', 'happyTextBox')
 	happyBox.setAttribute('style', 'width: 275px; height: 100px; margin-left:10px;')
 
@@ -175,8 +175,8 @@ function madForm(id){
 	textLabel.setAttribute('style', 'margin-left: 10px;')
 
 	// text box
-	var madBox = document.createElement('input')
-	madBox.setAttribute('type', 'text')
+	var madBox = document.createElement('textarea')
+	madBox.setAttribute('maxLength', '1000')
 	madBox.setAttribute('id', 'madTextBox')
 	madBox.setAttribute('style', 'width: 275px; height: 100px; margin-left:10px;')
 
@@ -281,8 +281,8 @@ function suggestForm(id){
 	textLabel.setAttribute('style', 'margin-left: 10px;')
 
 	// text box
-	var suggestBox = document.createElement('input')
-	suggestBox.setAttribute('type', 'text')
+	var suggestBox = document.createElement('textarea')
+	suggestBox.setAttribute('maxLength', '1000')
 	suggestBox.setAttribute('id', 'suggestTextBox')
 	suggestBox.setAttribute('style', 'width: 275px; height: 100px; margin-left:10px;')
 
