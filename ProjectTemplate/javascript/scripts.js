@@ -45,11 +45,80 @@ function happyForm(id){
 
 function madForm(id){
 	clearScreen(id);
-	var label = document.createElement('label');
-	label.innerHTML = "Provide your Feedback!";
 
-	var div = document.getElementById(id);
-	div.append(label);
+	// header
+	var header = document.createElement('h5')
+	header.innerHTML = "Give us your feedback!"
+	header.setAttribute('style', 'font-weight: bold; text-align: center;')
+
+	// message
+	var madText = document.createElement('p')
+	madText.innerHTML = "How can we improve?"
+	madText.setAttribute('id', 'madText')
+	madText.setAttribute('style', 'font-size: 15px; font-weight: bold; padding: 5px; text-align: center;')
+
+	// text box label
+	var textLabel = document.createElement('label')
+	textLabel.innerHTML = "What did you hate most about your experience?"
+	textLabel.setAttribute('id', 'madTextLabel')
+	textLabel.setAttribute('style', 'margin-left: 10px;')
+
+	// text box
+	var madBox = document.createElement('input')
+	madBox.setAttribute('type', 'text')
+	madBox.setAttribute('id', 'madTextBox')
+	madBox.setAttribute('style', 'width: 275px; height: 100px; margin-left:10px;')
+
+	// email
+	var emailBox = document.createElement('input')
+	emailBox.setAttribute('type', 'text')
+	emailBox.setAttribute('id', 'madEmailBox')
+	emailBox.setAttribute('style', 'width: 250px; margin-top: 10px; margin-left: 10px; margin-right: 10px')
+	emailBox.placeholder = 'Check the box to leave your email'
+	emailBox.disabled = true
+
+	// check box
+	var checkBox = document.createElement('input')
+	checkBox.setAttribute('type', 'checkbox')
+
+	checkBox.addEventListener('change', function(e) {
+
+		if (checkBox.checked) {
+			emailBox.disabled = false
+		} else {
+			emailBox.disabled = true
+		}
+	})
+
+
+	
+
+	// submit button
+	var submit 				= document.createElement('input')
+	submit.type				= 'button'
+	submit.name				= 'madSubmit'
+	submit.value			= "Submit"
+	submit.className		= 'btn btn-light'
+	submit.style.width		= '275px'
+	submit.style.marginTop 	= '10px'
+	submit.style.marginLeft = '10px'
+
+
+	var div = document.getElementById(id)
+	// div.append(header)
+	div.append(madText)
+	div.append(textLabel)
+	div.append(madBox)
+	div.append(emailBox)
+	div.append(checkBox)
+	div.append(submit)
+
+
+	// var label = document.createElement('label');
+	// label.innerHTML = "Provide your Feedback!";
+
+	// var div = document.getElementById(id);
+	// div.append(label);
 
 }
 
