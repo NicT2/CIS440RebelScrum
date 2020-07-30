@@ -20,6 +20,32 @@ function happyForm(id){
 	happyText.setAttribute('id', 'happyText')
 	happyText.setAttribute('style', 'font-size: 15px; font-weight: bold; padding: 5px; text-align: center;')
 
+	//option list
+	var listLabel = document.createElement('label')
+	var list = document.createElement('select')
+	var option1 = document.createElement('option')
+	var option2 = document.createElement('option')
+	var option3 = document.createElement('option')
+	
+	list.name = 'choices'
+	list.id = 'choices'
+	option1.id = 'pricing'
+	option2.id = 'contact'
+	option3.id = 'other'
+
+	option1.innerHTML = 'Pricing'
+	option2.innerHTML = 'Contact'
+	option3.innerHTML = 'Other'
+
+	list.appendChild(option1)
+	list.appendChild(option2)
+	list.appendChild(option3)
+
+	listLabel.innerHTML = "What part of TinDog would you like to provide feedback on?"
+	listLabel.style.marginLeft = "10px"
+	list.setAttribute('style', 'margin-left: 10px; margin-bottom: 10px; width: 275px;')
+	
+
 	// text box label
 	var textLabel = document.createElement('label')
 	textLabel.innerHTML = "What did you love most about your experience?"
@@ -74,12 +100,16 @@ function happyForm(id){
 	var div = document.getElementById(id)
 	// div.append(header)
 	div.append(happyText)
+	div.append(listLabel)
+	div.append(list)
 	div.append(textLabel)
 	div.append(happyBox)
 	div.append(anonLabel)
 	div.append(emailBox)
 	div.append(checkBox)
 	div.append(submit)
+
+	
 
 	/* //header
 	var header = document.createElement('h5');
@@ -150,6 +180,31 @@ function madForm(id){
 	madBox.setAttribute('id', 'madTextBox')
 	madBox.setAttribute('style', 'width: 275px; height: 100px; margin-left:10px;')
 
+	//option list
+	var listLabel = document.createElement('label')
+	var list = document.createElement('select')
+	var option1 = document.createElement('option')
+	var option2 = document.createElement('option')
+	var option3 = document.createElement('option')
+		
+	list.name = 'choices'
+	list.id = 'choices'
+	option1.id = 'pricing'
+	option2.id = 'contact'
+	option3.id = 'other'
+	
+	option1.innerHTML = 'Pricing'
+	option2.innerHTML = 'Contact'
+	option3.innerHTML = 'Other'
+	
+	list.appendChild(option1)
+	list.appendChild(option2)
+	list.appendChild(option3)
+	
+	listLabel.innerHTML = "What part of TinDog would you like to provide feedback on?"
+	listLabel.style.marginLeft = "10px"
+	list.setAttribute('style', 'margin-left: 10px; margin-bottom: 10px; width: 275px;')
+
 	// anon label
 	var anonLabel = document.createElement('label')
 	anonLabel.innerHTML = "Click the checkbox to remain anonymous"
@@ -195,6 +250,8 @@ function madForm(id){
 	var div = document.getElementById(id)
 	// div.append(header)
 	div.append(madText)
+	div.append(listLabel)
+	div.append(list)
 	div.append(textLabel)
 	div.append(madBox)
 	div.append(anonLabel)
