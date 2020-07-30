@@ -35,11 +35,21 @@ function happyForm(id){
 	// anon.setAttribute('id', 'anonCheckbox');
 	// anon.setAttribute('type', 'checkbox');
 
+	var submit 				= document.createElement('input')
+	submit.type				= 'button'
+	submit.name				= 'madSubmit'
+	submit.value			= "Submit"
+	submit.className		= 'btn btn-primary'
+	submit.style.width		= '275px'
+	submit.style.marginTop 	= '10px'
+	submit.style.marginLeft = '10px'
+
 	var div = document.getElementById(id);
 	div.append(header);
 	div.append(happyText);
 	div.append(textLabel);
 	div.append(happyBox);
+	div.append(submit);
 
 }
 
@@ -95,7 +105,7 @@ function madForm(id){
 	submit.type				= 'button'
 	submit.name				= 'madSubmit'
 	submit.value			= "Submit"
-	submit.className		= 'btn btn-light'
+	submit.className		= 'btn btn-primary'
 	submit.style.width		= '275px'
 	submit.style.marginTop 	= '10px'
 	submit.style.marginLeft = '10px'
