@@ -95,6 +95,8 @@ function happyForm(id){
 	submit.style.width		= '275px'
 	submit.style.marginTop 	= '10px'
 	submit.style.marginLeft = '10px'
+	submit.id 				= 'submitButton'
+	submit.onclick			= hapForm
 
 	// append everything
 	var div = document.getElementById(id)
@@ -243,7 +245,7 @@ function madForm(id){
 	submit.style.marginTop 	= '10px'
 	submit.style.marginLeft = '10px'
 	submit.id 				= 'submitButton'
-	submit.onclick			= thing
+	submit.onclick			= angryForm
 	//submit.onclick = function() { alert("it worked");}
 
 	// append everything
@@ -323,6 +325,8 @@ function suggestForm(id){
 	submit.style.width		= '275px'
 	submit.style.marginTop 	= '10px'
 	submit.style.marginLeft = '10px'
+	submit.id 				= 'submitButton'
+	submit.onclick			= sugForm
 
 	// append everything
 	var div = document.getElementById(id)
@@ -334,4 +338,119 @@ function suggestForm(id){
 	div.append(emailBox)
 	div.append(checkBox)
 	div.append(submit)
+}
+
+
+// 1st button's submit handler
+function hapForm(){
+
+  let email = document.getElementById("happyEmailBox").value
+  let anonBox = document.getElementById("happyEmailBox").placeholder
+  let choice = document.getElementById("choices").value
+  let feedback = document.getElementById("happyTextBox").value
+  var anon
+
+  feedback = choice + " - " + feedback
+
+  if(anonBox == 'Anonymous'){
+  	console.log('you is anon')
+  	email = null
+  	anon = true
+  	submitToDb("Love", feedback, anon, email);
+  }
+  else if (anonBox == "Enter your email address" && email == ''){
+  	alert('Please enter your email or click the checkbox')
+  }
+  else{
+  	console.log("you is ", email)
+  	anon = false
+  	submitToDb("Love", feedback, anon, email);
+  }
+}
+
+
+// 2nd button's submit handler
+function angryForm(){
+
+  let email = document.getElementById("madEmailBox").value
+  let anonBox = document.getElementById("madEmailBox").placeholder
+  let choice = document.getElementById("choices").value
+  let feedback = document.getElementById("madTextBox").value
+  var anon
+
+  feedback = choice + " - " + feedback
+
+  if(anonBox == 'Anonymous'){
+  	console.log('you is anon')
+  	email = null
+  	anon = true
+  	submitToDb("Hate", feedback, anon, email);
+  }
+  else if (anonBox == "Enter your email address" && email == ''){
+  	alert('Please enter your email or click the checkbox')
+  }
+  else{
+  	console.log("you is ", email)
+  	anon = false
+  	submitToDb("Hate", feedback, anon, email);
+  }
+}
+
+
+
+// 3rd button's submit handler
+function sugForm(){
+
+  let email = document.getElementById("suggestEmailBox").value
+  let anonBox = document.getElementById("suggestEmailBox").placeholder
+  let feedback = document.getElementById("suggestTextBox").value
+  var anon
+
+  // console.log(anonBox)
+  
+
+  if(anonBox == 'Anonymous'){
+  	console.log('you is anon')
+  	email = null
+  	anon = true
+  	submitToDb("suggestion", feedback, anon, email);
+  }
+  else if (anonBox == "Enter your email address" && email == ''){
+  	alert('Please enter your email or click the checkbox')
+  }
+  else{
+  	console.log("you is ", email)
+  	anon = false
+  	submitToDb("suggestion", feedback, anon, email);
+  }
+}
+
+
+
+
+// submits parameters to database
+function submitToDb(selectedMood, feedback, anon, email){
+
+	console.log(selectedMood, feedback, anon, email)
+
+	let queryStr = "insert into surveyResponses(buttonClicked, feedback, anonymous, email) values (" + selectedMood + ", " + feedback + ", " + anon + ", " + email + ");"
+
+	let testerStr = "SELECT buttonClicked FROM summer2020group2.surveyResponses"
+
+	 MySql.Execute(
+	 	"107.180.1.16",			// mySQL server
+        "summer2020group2", 	// login name
+        "!!Group2", 			// login password
+        "summer2020group2",
+
+        testerStr,
+
+       function(data){
+
+       	console.log(data.Result)
+
+
+       }
+
+        )  
 }
