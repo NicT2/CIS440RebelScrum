@@ -433,24 +433,50 @@ function submitToDb(selectedMood, feedback, anon, email){
 
 	console.log(selectedMood, feedback, anon, email)
 
-	let queryStr = "insert into surveyResponses(buttonClicked, feedback, anonymous, email) values (" + selectedMood + ", " + feedback + ", " + anon + ", " + email + ");"
+	let queryStr = "insert into surveyResponses(buttonClicked, feedback, anonymous, email) values ('" + selectedMood + "', '" + feedback + "', '" + anon + "', '" + email + "')";
 
 	let testerStr = "SELECT buttonClicked FROM summer2020group2.surveyResponses"
 
-	 MySql.Execute(
+	let insertTest = "INSERT INTO surveyResponses (buttonClicked, feedback, anonymous, email) VALUES ('happy', 'TESTTESTTEST', 1, 'gmail@gmail.com')"
+
+	console.log(queryStr)
+
+	MySql.Execute(
 	 	"107.180.1.16",			// mySQL server
         "summer2020group2", 	// login name
         "!!Group2", 			// login password
         "summer2020group2",
 
-        testerStr,
+        queryStr,
 
        function(data){
-
        	console.log(data.Result)
-
-
        }
+    );
 
-        )  
+/*
+
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+    host: "107.180.1.16",
+    user: "summer2020group2",
+    password: "!!Group2",
+    database: "summer2020group2"
+    });
+
+    con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+    var sql = "INSERT INTO surveyResponses (buttonClicked, feedback, anonymous, email) VALUES (" + selectedMood + ", " + feedback + ", " + anon + ", " + email + ")";
+    con.query(sql, function (err, result) {
+        if (err) throw err;
+        console.log("1 record inserted");
+    });
+});
+
+*/
+
+  
 }
+
