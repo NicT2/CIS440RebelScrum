@@ -433,7 +433,7 @@ function submitToDb(selectedMood, feedback, anon, email){
 
 	console.log(selectedMood, feedback, anon, email)
 
-	let queryStr = "insert into surveyResponses(buttonClicked, feedback, anonymous, email) values ('" + selectedMood + "', '" + feedback + "', '" + anon + "', '" + email + "')";
+	let queryStr = "insert into surveyResponses(buttonClicked, feedback, anonymous, email) values ('" + selectedMood + "', '" + feedback + "', " + anon + ", '" + email + "')";
 
 	let testerStr = "SELECT buttonClicked FROM summer2020group2.surveyResponses"
 
