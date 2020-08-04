@@ -28,9 +28,46 @@
 
 <script type="text/javascript">
 
-$(document).ready(function(){
-  $(".dropdown-toggle").dropdown();
-});
+// $(document).ready(function(){
+//   $(".dropdown-toggle").dropdown();
+// });
+$(document).ready(function() {
+
+  $(document).on('click', '.form-group, .dropdown-menu', function(e) {
+    e.stopPropagation()
+    console.log("fg, ddm")
+  })
+
+  $(document).on('hide.bs.dropdown', function() {
+    var id = document.getElementById('dropMenu')
+    // resetForm(id)
+    console.log('resetform')
+
+
+
+  })
+  
+  // $(document).on('hide.bs.dropdown', function() {
+  //   $('.px-4.py-3').get(0).reset()
+  //   console.log('reset')
+  // })
+
+})
+
+// $('.dropdown-menu').on('hide.bs.dropdown', function() {
+//   console.log("fired")
+//   // $(this).find('.form-group')[0].reset()
+// })
+
+// $(document).on('click', '#feedbackButton', function(e) {
+//   console.log("fired")
+// })
+
+// $(document).on('click', '.dropdown-menu', function(e) {
+//   e.stopPropagation()
+//   console.log(".ddmenu")
+// })
+
 
 </script>
 
@@ -71,7 +108,7 @@ $(document).ready(function(){
   <section id="title">
 
     <!-- survey button activates dropdown menu-->
-  <button type="button" class = "btn btn-light dropdown-toggle" style="margin: 10px; margin-left:0;"><img src="./images/smile.png" ></button>
+  <button type="button" id="feedbackButton" class = "btn btn-light dropdown-toggle" data-toggle="dropdown" style="margin: 10px; margin-left:0;"><img src="./images/smile.png" ></button>
   
   <!-- Dropdown menu -->
   <div class="dropdown-menu" id="dropMenu" style="max-width: 300px;">

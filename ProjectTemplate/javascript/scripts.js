@@ -3,7 +3,7 @@ function clearScreen(id){
 }
 
 function resetForm(id){
-	id.reset();
+	document.getElementById(id).reset();
 }
 
 function happyForm(id){
