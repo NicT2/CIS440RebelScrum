@@ -354,6 +354,8 @@ function suggestForm(id){
 // 1st button's submit handler
 function hapForm(){
 
+	alert("Thanks for the love! Your feedback has been submitted.")
+
   let email = document.getElementById("happyEmailBox").value
   let anonBox = document.getElementById("happyEmailBox").placeholder
   let choice = document.getElementById("choices").value
@@ -381,6 +383,8 @@ function hapForm(){
 
 // 2nd button's submit handler
 function angryForm(){
+
+	alert("Thanks for pointing out our flaws. We'll look into it right away!")
 
   let email = document.getElementById("madEmailBox").value
   let anonBox = document.getElementById("madEmailBox").placeholder
@@ -410,6 +414,8 @@ function angryForm(){
 
 // 3rd button's submit handler
 function sugForm(){
+
+	alert("Thanks, dog. We'll pass it on to our poodles.")
 
   let email = document.getElementById("suggestEmailBox").value
   let anonBox = document.getElementById("suggestEmailBox").placeholder
